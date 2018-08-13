@@ -1,5 +1,5 @@
 body {
-  background-color: #0b7096;
+  background: url(../img/overlay.png), linear-gradient(0deg, #00aeef, #00aef0);
   font-weight: 500; }
 
 .row {
@@ -13,23 +13,45 @@ body {
 
 .header {
   text-align: center;
-  height: 700px;
-  background: url(../img/girl-pet.jpeg) no-repeat;
-  background-size: cover;
-  background-position: center center;
   background-attachment: fixed;
+  background-image: url(../img/overlay.png), linear-gradient(0deg, rgba(25, 169, 224, 0.3), rgba(239, 66, 66, 0.12)), url(../img/girl-pet.jpeg);
+  background-size: cover;
+  background-position: center,	center,	top center;
+  background-repeat: repeat,	no-repeat,	no-repeat;
+  z-index: -1;
   margin: 0px auto;
-  padding: 200px 20px; }
-  .header div div div {
-    background-color: rgba(255, 255, 255, 0.6); }
+  padding: 150px 20px; }
   .header h1 {
+    color: #00aeef;
+    transform: rotate(-2deg);
     text-align: left;
-    border-bottom: 1px solid #009688;
-    border-right: 1px solid #009688;
+    font-weight: bold;
+    text-shadow: 2px 2px black;
+    /*border-bottom: 1px solid $backgrount-green;
+		border-right: 1px solid $backgrount-green;*/
     margin: 0px auto;
-    padding: 5px 15px;
+    padding: 5px 0px;
     margin-bottom: 15px;
     margin-top: 15px; }
+  .header .texto {
+    background-color: rgba(0, 0, 0, 0.76);
+    margin-top: 55px;
+    color: white;
+    height: 275px;
+    z-index: 5; }
+  .header .texto:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    height: 22px;
+    left: -0em;
+    width: calc(100% + 0em);
+    /*z-index: -1;*/
+    background-color: #00aeef;
+    background-image: url(../img/ip.svg);
+    background-size: 22px 22px;
+    background-position: left top;
+    background-repeat: repeat; }
   .header p {
     text-align: right;
     border-left: 1px solid #009688;
@@ -42,15 +64,38 @@ body {
 .geo {
   margin: 0px auto;
   padding: 20px 20px;
-  color: bisque; }
+  color: bisque;
+  border-bottom: 25px solid #443029;
+  background-color: #0b7096; }
   .geo div {
     border: 1px solid black;
     background-color: #00AEEF;
+    z-index: 1;
     margin: 0px auto;
     padding: 20px 20px; }
     .geo div p {
       text-align: justify;
       color: white; }
+
+.geo div:before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  background-color: #443029;
+  width: 10px;
+  height: 150px;
+  left: 30%;
+  z-index: 1; }
+
+.geo div:after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  background-color: #443029;
+  width: 10px;
+  height: 150px;
+  right: 30%;
+  z-index: 1; }
 
 .sitepet {
   height: 300px;
@@ -60,12 +105,17 @@ body {
   background: url(../img/dog.jpg) no-repeat;
   background-size: cover;
   background-position: center center;
-  background-attachment: fixed; }
-  .sitepet h3 {
-    border: 1px solid white;
-    line-height: 250px;
-    background-color: rgba(255, 242, 160, 0.4);
-    color: black; }
+  background-attachment: fixed;
+  margin: 75px 0px; }
+  .sitepet .sub-t {
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 1px solid white; }
+    .sitepet .sub-t h3 {
+      color: #350005;
+      font-weight: bold;
+      margin: 0px auto;
+      padding: 10% 0; }
 
 .box {
   min-height: 300px;
@@ -85,3 +135,34 @@ body {
       margin: 0px auto;
       padding: 15px 15px;
       text-align: justify; }
+
+@media only screen and (min-width: 2300px) {
+  .sitepet .sub-t h3 {
+    margin: 0px auto;
+    padding: 5% 0; } }
+
+@media only screen and (min-width: 1350px) {
+  .sitepet .sub-t h3 {
+    margin: 0px auto;
+    padding: 7% 0; } }
+
+@media only screen and (max-width: 645px) {
+  .sitepet .sub-t {
+    margin: 0px auto;
+    padding: 5% 0; } }
+
+@media only screen and (max-width: 430px) {
+  h1 {
+    font-size: 2rem; }
+  h2 {
+    font-size: 1.75rem; }
+  h3 {
+    font-size: 1.5rem; } }
+
+@media only screen and (max-width: 365px) {
+  h1 {
+    font-size: 1.75rem; }
+  h2 {
+    font-size: 1.5rem; }
+  h3 {
+    font-size: 1.25rem; } }
